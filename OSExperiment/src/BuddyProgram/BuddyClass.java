@@ -7,7 +7,11 @@ import java.awt.event.ActionListener;
 import javax.swing.AbstractAction;
 import javax.swing.JFrame;
 import javax.swing.Timer;
-
+/**
+ * buddyç®—æ³•
+ * @author rong
+ *
+ */
 
 public class BuddyClass {
 
@@ -37,7 +41,7 @@ public class BuddyClass {
 		
 		@Override
 		public void actionPerformed(ActionEvent e) { 
-			// TODO ×Ô¶¯Éú³ÉµÄ·½·¨´æ¸ù
+			// TODO ï¿½Ô¶ï¿½ï¿½ï¿½ÉµÄ·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 			int newProSize=(int) (Math.random()*6384+1);
 			int thread_life_time=(int)(Math.random()*7000+1000);
 			process_time=thread_life_time;
@@ -55,11 +59,11 @@ public class BuddyClass {
 		for (int i = 6; i <=14; i++) {
 			for(int j=0;j<(int)(Math.pow(2, 14)/Math.pow(2, i));j++){
 				Memory_Or_Not[i][j]=0;
-				Valuable_Or_Not[i][j]=0;//²»¿ÉÓÃ»ò·Ç¿ÕÏÐ
+				Valuable_Or_Not[i][j]=0;//ï¿½ï¿½ï¿½ï¿½ï¿½Ã»ï¿½Ç¿ï¿½ï¿½ï¿½
 				//myframe.changedMemoryState(i, j, 2);
 				if(i==14&&j==0){
-					Memory_Or_Not[i][j]=1;//×î´óµÄÄÚ´æ¿é
-					Valuable_Or_Not[i][j]=1;//¿ÕÏÐ
+					Memory_Or_Not[i][j]=1;//ï¿½ï¿½ï¿½ï¿½ï¿½Ú´ï¿½ï¿½
+					Valuable_Or_Not[i][j]=1;//ï¿½ï¿½ï¿½ï¿½
 					myframe.changedMemoryState(i, j, 1,getMemory_Or_Not(),getValuable_Or_Not());
 				}
 			}
@@ -120,8 +124,8 @@ public class BuddyClass {
 					myframe.setUsing_memory((int)Math.pow(2, 14)-remain_memory);
 					setNumber_of_thread(getNumber_of_thread()+1);
 					myframe.addProcessList("ID"+xMemlocate+yMemlocate, process_time, pro_size,xMemlocate,yMemlocate);
-					myframe.setProcess_info_text("½ø³Ì´´½¨³É¹¦£¡ ½ø³ÌÃû£º"+"ID"+xMemlocate+yMemlocate
-							+" ´óÐ¡£º"+pro_size+"KB"+"  Õ¼ÓÃÄÚ´æ£º"+(int)Math.pow(2, i)+"KB "+" Õ¼ÓÃÊ±¼ä£º"+process_time+"ms");
+					myframe.setProcess_info_text("ï¿½ï¿½Ì´ï¿½ï¿½ï¿½ï¿½É¹ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½"+"ID"+xMemlocate+yMemlocate
+							+" ï¿½ï¿½Ð¡ï¿½ï¿½"+pro_size+"KB"+"  Õ¼ï¿½ï¿½ï¿½Ú´æ£º"+(int)Math.pow(2, i)+"KB "+" Õ¼ï¿½ï¿½Ê±ï¿½ä£º"+process_time+"ms");
 					timer = new Timer(process_time,new TimerAction(xMemlocate,yMemlocate));
 					timer.start();
 					System.out.println(remain_memory);
@@ -135,7 +139,7 @@ public class BuddyClass {
 		}
 		if(i>14){
 			System.out.println("cann't find the proper memory!");
-			myframe.setProcess_info_text("ÎÞ·¨´´½¨ÐÂ½ø³Ì£¬ÕÒ²»µ½ÊÊºÏ"+pro_size+"KB´óÐ¡µÄÄÚ´æ¿é£¬ÇëµÈ´ýÄÚ´æÊÍ·Å£¡");
+			myframe.setProcess_info_text("ï¿½Þ·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â½ï¿½Ì£ï¿½ï¿½Ò²ï¿½ï¿½ï¿½ï¿½Êºï¿½"+pro_size+"KBï¿½ï¿½Ð¡ï¿½ï¿½ï¿½Ú´ï¿½é£¬ï¿½ï¿½È´ï¿½ï¿½Ú´ï¿½ï¿½Í·Å£ï¿½");
 		}
 //		else{
 //			for(i=6;i<=14;i++){
